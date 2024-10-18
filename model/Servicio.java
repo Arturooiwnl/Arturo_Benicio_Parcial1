@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.time.LocalDate;
@@ -14,16 +10,14 @@ import java.time.LocalDate;
  *
  */
 public abstract class Servicio {
-
-    // ATRIBUTOS
     private String codServicio;
     private double porcentajeDescuento;
     private boolean enPromocion;
 
-    // CONSTRUCCTOR
+    // CONSTRUCTOR
     public Servicio(String codServicio, double porcentajeDescuento, boolean enPromocion) throws Exception {
         if (codServicio.length() != 6) {
-            throw new Exception("El codigo de servicio debe contener 6 digitos!");
+            throw new Exception("El codigo de servicio debe contener 6 digitos!"); 
         }
         this.codServicio = codServicio;
         this.porcentajeDescuento = porcentajeDescuento;
@@ -32,17 +26,17 @@ public abstract class Servicio {
 
     // GETTERS
     public String getCodServicio() {
-        return codServicio;
+        return codServicio; // return de el codigo del servicio
     }
 
     public double getPorcentajeDescuento() {
-        return porcentajeDescuento;
+        return porcentajeDescuento; // return del porcentaje del descuento
     }
 
     public boolean isEnPromocion() {
-        return enPromocion;
+        return enPromocion; // return de los que estan en promocion
     }
 
     // METODO (abstracto)
-    public abstract double calcularPrecioFinal(LocalDate dia);
+    public abstract double calcularPrecioFinal(LocalDate dia); // calculaa el precio final segun la fecha
 }

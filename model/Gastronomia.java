@@ -10,8 +10,6 @@ import java.time.LocalDate;
  *
  */
 public class Gastronomia extends Servicio {
-
-    // ATRIBUTOS
     private String gastronomia;
     private double precio;
     private int diaSemDesc;
@@ -23,13 +21,13 @@ public class Gastronomia extends Servicio {
         
         // VALIDAR
         if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
-            throw new Exception("El porcentaje de descuento debe estar entre 0 y 100!");
+            throw new Exception("El porcentaje de descuento debe estar entre 0 y 100!"); 
         }
         if (precio <= 0) {
-            throw new Exception("El precio debe ser un valor positivo!");
+            throw new Exception("El precio debe ser un valor positivo!"); 
         }
         if (diaSemDesc < 1 || diaSemDesc > 7) {
-            throw new Exception("El dia de la semana debe estar entre 1 y 7!");
+            throw new Exception("El dia de la semana debe estar entre 1 y 7!"); 
         }
         
         this.gastronomia = gastronomia;
@@ -38,11 +36,18 @@ public class Gastronomia extends Servicio {
     }
 
     // METODOS
+    // Calcula el precio final aplicando descuento si esta en promocion y es el día establecido
     @Override
     public double calcularPrecioFinal(LocalDate dia) {
         if (isEnPromocion() && dia.getDayOfWeek().getValue() == diaSemDesc) {
             return precio - (precio * (getPorcentajeDescuento() / 100));
         }
-        return precio;
+        return precio; // return del precio sin descuento
+    }
+    
+    // representa el objeto como una cadena para facilitar la lectura
+    @Override
+    public String toString() {
+        return "Gastronomia{" + "gastronomia=" + gastronomia + ", precio=" + precio + ", diaSemDesc=" + diaSemDesc + '}';
     }
 }
