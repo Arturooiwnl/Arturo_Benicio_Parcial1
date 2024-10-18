@@ -75,7 +75,7 @@ public class Sistema {
 
     // Devuelve todos los servicios que están en promocion.
     public List<Servicio> traerServiciosEnPromocion() {
-        return traerServicios(true); // call al método anterior con 'true'
+        return traerServicios(true); // call al metodo anterior con true
     }
 
 
