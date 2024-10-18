@@ -3,10 +3,8 @@
 ---
 
 ## Alumno
-<<<<<<< HEAD
 =======
 
->>>>>>> c34b90bbc00316857502d9bc48396b8f0500291d
 **Nombre del alumno**: Arturo Benicio Perotto
 
 ## 📄 Descripción del Proyecto
